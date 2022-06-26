@@ -1,6 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-}
-
-module.exports = nextConfig
+  compilerOptions: {
+    baseUrl: "./src",
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  generateBuildId: async () => {
+    // You can, for example, get the latest git commit hash here
+    return "my-build-id";
+  },
+};
